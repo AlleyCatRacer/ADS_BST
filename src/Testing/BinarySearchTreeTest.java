@@ -7,11 +7,6 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 public class BinarySearchTreeTest
 {
 	private SearchNode<Integer> root;
@@ -35,10 +30,44 @@ public class BinarySearchTreeTest
 		System.out.println("\n\n____________________________________________________________________________________________________________________________________\n\n");
 	}
 	
-	@Test void remove5()
+	@Test void removeElement5()
 	{
 		mill.printTree(root);
+		System.out.println("\n\n____________________________________________________________________________________________________________________________________\n\n");
 		tree.remove(5);
+		mill.printTree(tree.getRoot());
+	}
+	
+	@Test void insertElement8()
+	{
+		mill.printTree(root);
+		System.out.println("\n\n____________________________________________________________________________________________________________________________________\n\n");
+		tree.insert(8);
+		mill.printTree(tree.getRoot());
+	}
+	
+	@Test void rebalance()
+	{
+		mill.printTree(root);
+		System.out.println("\n\n____________________________________________________________________________________________________________________________________\n\n");
+		tree.rebalance();
+		mill.printTree(tree.getRoot());
+	}
+	
+	@Test void insertElement8AndRebalance()
+	{
+		mill.printTree(root);
+		System.out.println("\n\n____________________________________________________________________________________________________________________________________\n\n");
+		tree.insert(8);
+		tree.rebalance();
+		mill.printTree(tree.getRoot());
+	}
+	
+	@Test void removeRootAndRebalance()
+	{
+		mill.printTree(root);
+		System.out.println("\n\n____________________________________________________________________________________________________________________________________\n\n");
+		tree.remove(29);
 		mill.printTree(tree.getRoot());
 	}
 }
